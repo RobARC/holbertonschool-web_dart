@@ -1,5 +1,5 @@
 // Print Hello Holberton! followed by newline
 
 void main () {
- print("Hello, Holberton!\n"); 
+ print("Hello Holberton!\n"); 
 }
