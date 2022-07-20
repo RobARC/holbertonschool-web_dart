@@ -8,6 +8,6 @@ int sub(int a, int b) => a - b;
 String showFunc(int a, int b){
     // Return is string with sum and difference messages based on helper functions
     String addStr = 'Add $a + $b = ${add(a, b)}';
-    String subStr = 'Sub $a -$b = ${sub(a, b)}';
+    String subStr = 'Sub $a - $b = ${sub(a, b)}';
     return addStr + '\n' + subStr;
 }
