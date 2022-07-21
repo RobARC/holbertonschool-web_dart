@@ -1,12 +1,27 @@
-// Calculate who wins basketball game - sum of free throws, 2 pointers, 3 pointers
-// Return 1 for team1, 2 for team2, 0 for draw
+int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
+  var teamOne = 0;
+  var teamTwo = 0;
 
-int whoWins(Map<String, int> team1, Map<String, int> team2) {
-  // ! is null check in case shape of map is not correct
-  // Would have preferred loop with value multiplied by key + 1 but no time currently
-  var team1Total = team1['Free throws']! + team1['2 pointers']! * 2 + team1['3 pointers']! * 3;
-  var team2Total = team2['Free throws']! + team2['2 pointers']! * 2 + team2['3 pointers']! * 3;
-  if (team1Total > team2Total) return 1;
-  if (team1Total < team2Total) return 2;
-  return 0;
+  teamA.forEach((key, value) {
+    if (key == 'Free throws')
+      teamOne += value;
+    else if (key == '2 pointer')
+      teamOne += value * 2;
+    else if (key == '3 pointer') teamOne += value * 3;
+  });
+
+  teamB.forEach((key, value) {
+    if (key == 'Free throws')
+      teamTwo += value;
+    else if (key == '2 pointer')
+      teamTwo += value * 2;
+    else if (key == '3 pointer') teamTwo += value * 3;
+  });
+
+  if (teamOne > teamTwo)
+    return 1;
+  else if (teamOne == teamTwo)
+    return 0;
+  else
+    return 2;
 }
